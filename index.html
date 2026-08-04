@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Años - Domenica Rodríguez</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia,serif;
+background:url("IMG-20260803-WA0055.jpg") center center/cover no-repeat fixed;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow:hidden;
+color:white;
+position:relative;
+}
+
+/* Fondo oscuro */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.35);
+z-index:-2;
+}
+
+/* Tarjeta */
+
+.tarjeta{
+width:95%;
+max-width:420px;
+background:rgba(0,0,0,.45);
+border:3px solid gold;
+border-radius:25px;
+padding:25px;
+text-align:center;
+box-shadow:0 0 30px gold;
+animation:entrada 2s ease;
+position:relative;
+z-index:5;
+}
+
+@keyframes entrada{
+
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+h2{
+font-size:24px;
+color:#98FB98;
+margin-bottom:10px;
+}
+
+h1{
+font-size:39px;
+color:#FFD700;
+margin-bottom:12px;
+text-shadow:0 0 12px gold;
+}
+
+.frase{
+font-size:18px;
+font-style:italic;
+color:#FFF8DC;
+margin-bottom:20px;
+}
+
+p{
+font-size:17px;
+line-height:1.7;
+}
+
+.info{
+margin:20px 0;
+padding:15px;
+background:rgba(255,255,255,.10);
+border-radius:15px;
+}
+
+.info p{
+margin:10px 0;
+}
+
+.boton{
+display:block;
+width:100%;
+padding:15px;
+margin-top:18px;
+background:#FFD700;
+color:#14532d;
+text-decoration:none;
+font-weight:bold;
+border-radius:35px;
+transition:.3s;
+animation:brillo 2s infinite;
+}
+
+.boton:hover{
+background:white;
+transform:scale(1.04);
+}
+
+@keyframes brillo{
+
+0%,100%{
+box-shadow:0 0 8px gold;
+}
+
+50%{
+box-shadow:0 0 25px gold;
+}
+
+}
+
+footer{
+margin-top:20px;
+font-size:16px;
+color:#FFF8DC;
+}
+
+/* Música */
+
+#musica{
+display:none;
+}
+
+/* Luciérnagas */
+
+.firefly{
+position:fixed;
+width:8px;
+height:8px;
+background:#FFD700;
+border-radius:50%;
+box-shadow:0 0 15px gold;
+animation:subir 12s linear infinite,
+brillar 2s ease-in-out infinite;
+}
+
+@keyframes subir{
+
+0%{
+transform:translateY(110vh);
+}
+
+100%{
+transform:translateY(-20vh);
+}
+
+}
+
+@keyframes brillar{
+
+0%,100%{
+opacity:.3;
+transform:scale(.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1.8);
+}
+
+}
+
+/* Coronas */
+
+.crown{
+position:fixed;
+font-size:28px;
+opacity:.8;
+animation:corona 16s linear infinite;
+}
+
+@keyframes corona{
+
+0%{
+transform:translateY(110vh) rotate(0deg);
+}
+
+100%{
+transform:translateY(-20vh) rotate(360deg);
+}
+
+}
+  /* Mariposas */
+
+.butterfly{
+position:fixed;
+font-size:28px;
+opacity:.9;
+animation:mariposa 18s linear infinite;
+}
+
+@keyframes mariposa{
+
+0%{
+left:-10%;
+top:80%;
+transform:rotate(0deg);
+}
+
+25%{
+left:20%;
+top:60%;
+}
+
+50%{
+left:50%;
+top:35%;
+transform:rotate(15deg);
+}
+
+75%{
+left:80%;
+top:20%;
+}
+
+100%{
+left:110%;
+top:5%;
+transform:rotate(-15deg);
+}
+
+}
+
+/* Destellos */
+
+.star{
+position:fixed;
+font-size:14px;
+color:#FFF8B5;
+animation:estrella 3s infinite;
+}
+
+@keyframes estrella{
+
+0%,100%{
+opacity:.2;
+transform:scale(.5);
+}
+
+50%{
+opacity:1;
+transform:scale(1.5);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="musica" autoplay loop>
+<source src="ssstik.io_1785797092263.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Luciérnagas -->
+
+<div class="firefly" style="left:5%;animation-delay:0s;"></div>
+<div class="firefly" style="left:20%;animation-delay:2s;"></div>
+<div class="firefly" style="left:35%;animation-delay:4s;"></div>
+<div class="firefly" style="left:50%;animation-delay:6s;"></div>
+<div class="firefly" style="left:65%;animation-delay:1s;"></div>
+<div class="firefly" style="left:80%;animation-delay:3s;"></div>
+<div class="firefly" style="left:95%;animation-delay:5s;"></div>
+
+<!-- Coronas -->
+
+<div class="crown" style="left:10%;animation-delay:0s;">👑</div>
+<div class="crown" style="left:45%;animation-delay:5s;">👑</div>
+<div class="crown" style="left:80%;animation-delay:10s;">👑</div>
+
+<!-- Mariposas -->
+
+<div class="butterfly" style="animation-delay:0s;">🦋</div>
+<div class="butterfly" style="animation-delay:8s;">🦋</div>
+
+<!-- Destellos -->
+
+<div class="star" style="top:10%;left:15%;">✨</div>
+<div class="star" style="top:25%;left:75%;">✨</div>
+<div class="star" style="top:60%;left:20%;">✨</div>
+<div class="star" style="top:80%;left:90%;">✨</div>
+
+<div class="tarjeta">
+
+<h2>✨ Mis XV Años ✨</h2>
+
+<h1>Domenica Rodríguez</h1>
+
+<p class="frase">
+"Los sueños se hacen realidad cuando creemos en ellos."
+</p>
+
+<p>
+Con la bendición de Dios y el amor de mi familia,
+te invito a compartir una noche mágica inspirada en
+<b>La Princesa y el Sapo</b>.
+</p>
+
+<div class="info">
+
+<p>📅 <b>Fecha:</b> 15 de agosto de 2026</p>
+
+<p>🕖 <b>Hora:</b> 7:00 p.m.</p>
+
+<p>📍 <b>Lugar:</b> Coop. 14 de Febrero, Mz B Solar 12 (Terraza Fajardo)</p>
+
+<p>🎟️ <b>Admisión:</b> 2 personas</p>
+
+</div>
+<a class="boton"
+href="https://maps.app.goo.gl/kHVTN8gXJk7gKErL8?g_st=aw"
+target="_blank">
+📍 Ver ubicación en Google Maps
+</a>
+
+<footer>
+👑 ¡Te esperamos para vivir una noche inolvidable! 🐸✨
+</footer>
+
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+
+// Intenta reproducir la música al abrir la página
+window.addEventListener("load", () => {
+    musica.volume = 0.6;
+
+    const intento = musica.play();
+
+    if (intento !== undefined) {
+        intento.catch(() => {
+            // Si el navegador la bloquea, se reproducirá
+            // con el primer toque en la pantalla.
+            document.addEventListener("click", iniciarMusica, {
+                once: true
+            });
+
+            document.addEventListener("touchstart", iniciarMusica, {
+                once: true
+            });
+        });
+    }
+});
+
+function iniciarMusica() {
+    musica.play();
+}
+
+// Evita que la música se pause si la página vuelve a estar visible
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && musica.paused) {
+        musica.play().catch(() => {});
+    }
+});
+</script>
+
+</body>
+</html>
